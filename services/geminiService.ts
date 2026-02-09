@@ -32,7 +32,7 @@ export async function predictPropertyPrice(details: PropertyDetails): Promise<Pr
   `;
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-2-flash",
     contents: prompt,
     config: {
       responseMimeType: "application/json",
@@ -114,7 +114,7 @@ export async function chatWithConsultant(message: string, context?: PredictionRe
   }
 
   const response = await ai.models.generateContent({
-    model: "gemini-3-pro-preview",
+    model: "gemini-2-flash",
     contents: message,
     config: {
       systemInstruction: systemContext
@@ -128,7 +128,7 @@ export async function chatWithConsultant(message: string, context?: PredictionRe
 export async function getDeepInsights(location: string, lat?: number, lng?: number) {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2-flash",
     contents: `Analyze infrastructure and real estate scenario for ${location}. Find specific metro projects, schools, or industrial growth.`,
     config: {
       tools: [{ googleMaps: {} }, { googleSearch: {} }],
@@ -154,7 +154,7 @@ export async function editPropertyImage(base64Image: string, prompt: string, pro
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const imageData = base64Image.split(',')[1] || base64Image;
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash-image',
+    model: 'gemini-2-flash',
     contents: {
       parts: [
         { inlineData: { data: imageData, mimeType: 'image/png' } },

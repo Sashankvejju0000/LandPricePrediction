@@ -1,0 +1,16 @@
+name = "landpred-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-12"
+
+# Environment variables
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+[env.development]
+vars = { ENVIRONMENT = "development" }
+
+# Build configuration
+[build]
+command = "npm run build:worker"
+cwd = "./"
+watch_paths = ["src/**/*.ts"]

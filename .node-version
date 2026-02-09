@@ -1,0 +1,5 @@
+production_branch = "main"
+node_version = "18.17.0"
+
+[env.production]
+  compatibility_flags = []

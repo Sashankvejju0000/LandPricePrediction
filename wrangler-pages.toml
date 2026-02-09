@@ -1,0 +1,8 @@
+name = "landpred"
+type = "javascript"
+main = "index.html"
+
+[build]
+command = "npm install && npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.ts", "src/**/*.tsx"]

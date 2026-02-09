@@ -1,0 +1,7 @@
+{
+  "name": "Copy of PS's Valuation - AI Land Price Predictor",
+  "description": "An AI-powered real estate valuation platform providing high-precision property price estimates in Rupees with past, present, and future trends.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
